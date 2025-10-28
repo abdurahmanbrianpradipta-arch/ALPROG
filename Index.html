@@ -4,15 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jumlah Penduduk Kota Depok 2024</title>
-
-  <!-- Memanggil library Chart.js untuk membuat diagram batang -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Memanggil library Leaflet untuk menampilkan peta -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Bagian CSS untuk mengatur tampilan halaman -->
   <style>
    body {
       font-family: Arial, sans-serif;
@@ -20,8 +14,6 @@
       margin: 0;
       padding: 0;
    }
-
-   /* Pengaturan tata letak utama */
    .container {
       width: 100%;
       max-width: 1200px;
@@ -29,8 +21,6 @@
       padding: 20px;
       text-align: center;
    }
-
-   /* Bagian header dengan gambar latar */
    .header {
       position: relative;
       color: white;
@@ -39,8 +29,6 @@
       width: 100%;
       height: auto;
    }
-
-   /* Overlay transparan di atas gambar header */
    .header .overlay {
       position: absolute;
       top: 0;
@@ -53,31 +41,23 @@
       align-items: center;
       justify-content: center;
    }
-
-   /* Logo Depok di header */
    .header .overlay img {
       width: 150px;
       height: auto;
    }
-
    .header .overlay h1 {
       font-size: 36px;
       margin: 10px 0;
    }
-
    .header .overlay p {
       font-size: 18px;
       margin: 10px 0;
    }
-
-   /* Bagian konten utama */
    .content {
       background-color: #fdfdfd;
       padding: 20px;
       color: black;
    }
-
-   /* Tabel data penduduk */
    .content table {
       width: 100%;
       border-collapse: collapse;
@@ -94,31 +74,23 @@
       background-color: #290797;
       color: white;
    }
-
-   /* Paragraf deskripsi */
    .info {
       text-align: justify;
       margin-top: 20px;
       font-size: 15px;
       line-height: 1.6;
    }
-
-   /* Kanvas untuk Chart.js */
    #pendudukChart {
       margin-top: 40px;
       width: 100%;
       max-width: 900px;
    }
-
-   /* Area peta Leaflet */
    #map {
       height: 400px;
       width: 100%;
       margin-top: 30px;
       border-radius: 10px;
    }
-
-   /* Footer halaman */
    footer {
       background-color: #290797;
       color: white;
@@ -132,7 +104,6 @@
 
  <body>
   <div class="container">
-   <!-- Bagian header dengan gambar latar dan deskripsi kota -->
    <div class="header">
     <img alt="Background image of Depok city" src="https://events.rumah123.com/news-content/img/2021/06/15120033/Penyangga-Kota-Depok.jpg"/>
     <div class="overlay">
@@ -143,7 +114,6 @@
    </div>
 
    <div class="content">
-    <!-- Tabel data jumlah penduduk -->
     <table>
       <tr>
         <th>Kelompok Umur (Tahun) <br><i>Age Group (Years)</i></th>
@@ -151,7 +121,6 @@
         <th>Perempuan <br><i>Female</i></th>
         <th>Jumlah <br><i>Total</i></th>
       </tr>
-      <!-- Baris data tiap kelompok umur -->
       <tr><td>0 - 4</td><td>85,575</td><td>81,966</td><td>167,541</td></tr>
       <tr><td>5 - 9</td><td>84,943</td><td>80,925</td><td>165,868</td></tr>
       <tr><td>10 - 14</td><td>84,709</td><td>81,290</td><td>165,999</td></tr>
@@ -168,18 +137,15 @@
       <tr><td>65 - 69</td><td>29,027</td><td>31,536</td><td>60,563</td></tr>
       <tr><td>70 - 74</td><td>18,085</td><td>20,473</td><td>38,558</td></tr>
       <tr><td>75+</td><td>12,497</td><td>16,237</td><td>28,734</td></tr>
-      <!-- Total keseluruhan -->
       <tr style="font-weight:bold;">
         <td>Jumlah</td><td>1,088,759</td><td>1,074,876</td><td>2,163,635</td>
       </tr>
     </table>
 
-    <!-- Sumber data -->
     <p><b>Keterangan Data :</b><br>
       Sumber : Data 2023–2024 BPS, Proyeksi Penduduk Kabupaten/Kota di Provinsi Jawa Barat 2020–2035
     </p>
 
-    <!-- Paragraf analisis deskriptif -->
     <div class="info">
       Berdasarkan data di atas, jumlah penduduk Kota Depok pada tahun 2024 mencapai <b>2.163.635 jiwa</b> yang terdiri dari <b>1.088.759 laki-laki</b> dan <b>1.074.876 perempuan</b>. 
       Komposisi penduduk menunjukkan bahwa kelompok umur produktif (15–64 tahun) mendominasi, yang mencerminkan potensi ekonomi dan tenaga kerja yang besar di wilayah ini. 
@@ -187,27 +153,23 @@
       Hal ini menunjukkan struktur demografi yang stabil serta pertumbuhan populasi yang berkesinambungan, sejalan dengan perkembangan sosial dan ekonomi kota sebagai wilayah penyangga ibu kota.
     </div>
 
-    <!-- Diagram batang menggunakan Chart.js -->
     <h3 style="margin-top: 30px;">Diagram Batang Jumlah Penduduk per Kelompok Umur</h3>
     <canvas id="pendudukChart"></canvas>
 
-    <!-- Peta Kota Depok menggunakan Leaflet -->
     <h3 style="margin-top: 40px;">Peta Kota Depok</h3>
     <div id="map"></div>
    </div>
   </div>
 
-  <!-- Footer dengan nama pembuat -->
   <footer>
     Dibuat oleh: <b>Abdurahman Brian Pradipta 2025</b>
   </footer>
 
-  <!-- Bagian JavaScript -->
   <script>
-    // === Membuat Diagram Batang Chart.js ===
+    // Data untuk diagram batang
     const ctx = document.getElementById('pendudukChart').getContext('2d');
     new Chart(ctx, {
-      type: 'bar', // Jenis grafik
+      type: 'bar',
       data: {
         labels: ['0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75+'],
         datasets: [{
@@ -221,25 +183,33 @@
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: 'Jumlah Penduduk' }
+            title: {
+              display: true,
+              text: 'Jumlah Penduduk'
+            }
           },
           x: {
-            title: { display: true, text: 'Kelompok Umur (Tahun)' }
+            title: {
+              display: true,
+              text: 'Kelompok Umur (Tahun)'
+            }
           }
         },
-        plugins: { legend: { display: false } }
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
       }
     });
 
-    // === Menampilkan Peta Leaflet ===
+    // Inisialisasi peta Leaflet
     const map = L.map('map').setView([-6.394525325502637, 106.80891659622311], 13);
 
-    // Menambahkan layer peta dasar dari OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Menandai lokasi Kota Depok dengan popup
     L.marker([-6.394525325502637, 106.80891659622311]).addTo(map)
       .bindPopup('<b>Kota Depok</b><br>Provinsi Jawa Barat, Indonesia')
       .openPopup();
